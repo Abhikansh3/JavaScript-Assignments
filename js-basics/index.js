@@ -57,18 +57,30 @@
 // console.log(output)
 
 //Q6
-const input = [
-  { name: "A", city: "Delhi" },
-  { name: "B", city: "Mumbai" },
-  { name: "C", city: "Delhi" }
-]
+// const input = [
+//   { name: "A", city: "Delhi" },
+//   { name: "B", city: "Mumbai" },
+//   { name: "C", city: "Delhi" }
+// ]
+//
+// const output = input.reduce((acc, curr) => {
+//   if (!acc[curr.city]) {
+//     acc[curr.city] = []
+//   }
+//   acc[curr.city].push(curr.name);
+//   return acc
+//
+// }, {})
+// console.log(output)
 
-const output = input.reduce((acc, curr) => {
-  if (!acc[curr.city]) {
-    acc[curr.city] = []
-  }
-  acc[curr.city].push(curr.name);
-  return acc
+//Q7
+const input = { a: 20, b: 60, c: 40, d: 90 }
 
-}, {})
-console.log(output)
+
+const output = Object.fromEntries(Object.entries(input).filter(([key, value]) => {
+  return value > 50;
+})
+)
+
+console.log(output);
+
