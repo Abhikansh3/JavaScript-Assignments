@@ -27,9 +27,48 @@
 // console.log(result2);
 
 //Q3
-const input3 = { a: "x", b: "y", c: "z" }
+// const input3 = { a: "x", b: "y", c: "z" }
+//
+// const output3 = Object.fromEntries(
+//   Object.entries(input3).map(([key, value]) => [value, key])
+// )
+// console.log(output3)
 
-const output3 = Object.fromEntries(
-  Object.entries(input3).map(([key, value]) => [value, key])
-)
-console.log(output3)
+// //Q4
+// const input = { a: 10, b: 50, c: 20 }
+// const output = Object.keys(input).reduce((max, curr) => {
+//   if (input[curr] > input[max]) {
+//     return curr
+//   } else {
+//     return max
+//   }
+// })
+// console.log(output)
+
+//Q5
+/* const input = { fruits: ["apple", "banana"], veggies: ["carrot", "pea"] } */
+//Soln 1
+// const output = Object.entries(input).map((val) => {
+//   return [...val[1]];
+// }).flat()
+// console.log(output)
+// Soln2
+// const output = Object.values(input).flat()
+// console.log(output)
+
+//Q6
+const input = [
+  { name: "A", city: "Delhi" },
+  { name: "B", city: "Mumbai" },
+  { name: "C", city: "Delhi" }
+]
+
+const output = input.reduce((acc, curr) => {
+  if (!acc[curr.city]) {
+    acc[curr.city] = []
+  }
+  acc[curr.city].push(curr.name);
+  return acc
+
+}, {})
+console.log(output)
