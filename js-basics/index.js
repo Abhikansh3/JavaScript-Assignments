@@ -28,7 +28,6 @@
 
 //Q3
 // const input3 = { a: "x", b: "y", c: "z" }
-//
 // const output3 = Object.fromEntries(
 //   Object.entries(input3).map(([key, value]) => [value, key])
 // )
@@ -74,13 +73,17 @@
 // console.log(output)
 
 //Q7
-const input = { a: 20, b: 60, c: 40, d: 90 }
-
-
-const output = Object.fromEntries(Object.entries(input).filter(([key, value]) => {
-  return value > 50;
-})
-)
+// const input = { a: 20, b: 60, c: 40, d: 90 }
+// const output = Object.fromEntries(Object.entries(input).filter(([key, value]) => {
+//   return value > 50;
+// })
+// )
+// console.log(output);
+//
+//Q8
+const input = { A: [80, 90], B: [70, 75, 85] };
+const output = Object.entries(input).reduce((key, [curr, value]) => {
+  key[curr] = value.reduce(s)
+});
 
 console.log(output);
-
